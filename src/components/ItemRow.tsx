@@ -24,11 +24,10 @@ export function ItemRow({ item, me, onToggle, onEdit }: Props) {
             {item.name}
             {item.quantity && <span className="qty">{item.quantity}</span>}
           </span>
-          {(item.note || by || item.source === 'nano') && (
+          {(item.note || by) && (
             <span className="item-sub">
               {item.note && <span className="note">{item.note}</span>}
               {by && <span className="by">{item.bought ? `נקנה ע״י ${by}` : by}</span>}
-              {item.source === 'nano' && !by && <span className="by">ננו</span>}
             </span>
           )}
         </span>
